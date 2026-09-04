@@ -120,6 +120,7 @@ main { overflow-x:clip; }
 .service-item h3 { grid-column:2; grid-row:1; align-self:end; margin:0; font:700 clamp(28px,3vw,44px)/1.05 var(--pixel); letter-spacing:-.015em; }
 .service-item > p { grid-column:2; grid-row:2; margin:0; color:var(--muted); font-size:16px; line-height:1.8; max-width:680px; }
 .service-item:not(.has-art) > p { grid-column:2 / 4; }
+.service-item:not(.has-art) > h3 { grid-column:2 / 4; }
 .service-art { grid-column:3; grid-row:1 / 3; width:200px; height:200px; object-fit:contain; align-self:center; justify-self:center; }
 .service-art-mobile { width:180px; height:200px; }
 @media (min-width:1600px) { .services-list { max-width:1280px; } }

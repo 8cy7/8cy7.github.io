@@ -2,6 +2,9 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 
+// Keep the illustrations available while previewing the text-only layout.
+const showServiceImages = false;
+
 const services = [
   { name: 'WEB DEVELOPMENT', description: 'Responsive websites and web apps built around clear interfaces, fast performance, and everyday usability.', image: 'web' },
   { name: 'MOBILE APPS', description: 'Thoughtful mobile experiences that turn useful ideas into intuitive apps for everyday life.', image: 'mobile' },
@@ -21,7 +24,7 @@ export function Services() {
       <ol className="services-list">
         {services.map((service, index) => <motion.li
           key={service.name}
-          className={`service-item${service.image ? ' has-art' : ''}`}
+          className={`service-item${showServiceImages && service.image ? ' has-art' : ''}`}
           initial={false}
           whileInView={reduced ? undefined : { opacity: [0.65, 1], y: [16, 0] }}
           viewport={{ once: true, amount: 0.15 }}
@@ -30,7 +33,7 @@ export function Services() {
           <span className="service-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <h3>{service.name}</h3>
           <p>{service.description}</p>
-          {service.image && <img className={`service-art service-art-${service.image}`} src={`/assets/services/service-${service.image}.png`} width="1254" height="1254" alt="" loading="lazy" decoding="async" />}
+          {showServiceImages && service.image && <img className={`service-art service-art-${service.image}`} src={`/assets/services/service-${service.image}.png`} width="1254" height="1254" alt="" loading="lazy" decoding="async" />}
         </motion.li>)}
       </ol>
     </div>
