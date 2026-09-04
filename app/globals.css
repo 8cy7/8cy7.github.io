@@ -41,8 +41,14 @@ h1 span { display:block; }
 .cta-arrow { position:absolute; right:18px; top:17px; font-size:28px; }
 .work-link { font-size:17px; letter-spacing:1px; border-bottom:2px solid currentColor; padding-bottom:3px; margin-left:6px; }
 /* Let original image edges and floating bubbles extend beyond the scene box. */
-.hero-scene { position:relative; width:calc(100% + 128px); margin-left:-85px; aspect-ratio:1; isolation:isolate; overflow:visible; }
+.hero-scene { position:relative; width:calc(100% + 128px); margin-left:-85px; aspect-ratio:1; isolation:isolate; overflow:visible; container-type:inline-size; --table-top:71%; }
 .scene-item { position:absolute; left:var(--left); top:var(--top); width:var(--width); }
+/* Use one physical surface for every supported object, including the lower right ledge. */
+.scene-platform { top:var(--table-top); }
+.scene-item[data-supported] { top:calc(var(--table-top) + var(--contact-offset)); transform:translateY(-100%); }
+.scene-item[data-supported] .asset { filter:drop-shadow(0 1px 1px rgb(62 32 17 / 16%)); }
+/* The paper begins at the printer slot, whose height scales with the computer width. */
+.scene-cv { top:calc(var(--table-top) + 5.8cqw - 10.3cqw); }
 .hero-footer { display:flex; align-items:flex-end; justify-content:space-between; padding:8px 0 30px; margin-top:-5px; }
 .scroll-link { display:flex; flex-direction:column; gap:5px; align-items:center; font-size:12px; color:#565452; letter-spacing:1px; }
 .scroll-link span { color:#141414; font-family:monospace; font-size:32px; line-height:20px; }
@@ -65,8 +71,8 @@ h1 span { display:block; }
  .hero-layout { padding-top:30px; }.hero-copy { display:flex; flex-direction:column; }.eyebrow { font-size:14px; margin-bottom:17px; }h1 { font-size:clamp(54px,12.7vw,95px); line-height:.88; letter-spacing:-.025em; }.job-title { font-size:clamp(22px,5.7vw,36px); margin-top:12px; }
  .description { order:1; font-size:14px; line-height:1.8; margin:24px 0 15px; max-width:410px; }.desktop-break { display:none; }.sticky-notes { order:2; gap:18px; margin:10px 0 26px; width:100%; max-width:475px; }.sticky-notes li { padding-inline:0; }
  .hero-actions { order:3; gap:24px; }.primary-cta { font-size:30px; padding:18px 24px; min-width:0; width:min(100%,345px); }.work-link { font-size:14px; margin-left:0; }
- .hero-scene { width:calc(100vw - 12px); margin:47px 0 12px; aspect-ratio:.94; }
- .scene-computer { left:10%; top:13%; width:80%; }.scene-platform { left:0; top:76%; width:100%; }.scene-learning { left:9%; top:1%; width:29%; }.scene-ideas { left:70%; top:0; width:25%; }.scene-cv { left:24%; top:76%; width:29%; }.scene-mug { left:2%; top:69%; width:18%; }.scene-books { left:79%; top:72%; width:21%; }.scene-cat { left:70%; top:86%; width:24%; }
+ .hero-scene { width:calc(100vw - 12px); margin:47px 0 12px; aspect-ratio:.94; --table-top:74%; }
+ .scene-computer { left:10%; width:80%; }.scene-platform { left:0; width:100%; }.scene-learning { left:9%; top:1%; width:29%; }.scene-ideas { left:70%; top:0; width:25%; }.scene-cv { left:24%; top:calc(var(--table-top) + 5.8cqw - 11.4cqw); width:27%; }.scene-mug { left:2%; width:18%; }.scene-books { left:77%; width:21%; }.scene-cat { left:79%; width:21%; }
  .hero-footer { padding-bottom:25px; }.location { font-size:10px; letter-spacing:.8px; gap:8px; }.scroll-link { font-size:10px; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }*,*::before,*::after { animation:none!important; transition:none!important; } }
@@ -98,8 +104,4 @@ main { overflow-x:clip; }
 }
 @media (max-width:767px) {
  h1 { font-size:clamp(54px,16.5vw,110px); }
-}
-@media (max-width:767px) {
- .scene-platform { top:74%; }
- .scene-cv { top:75%; width:27%; }
 }
