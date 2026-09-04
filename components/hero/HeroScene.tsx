@@ -24,7 +24,7 @@ export function HeroScene() {
    if(reduced || e.pointerType!=='mouse')return;
    const r=e.currentTarget.getBoundingClientRect();px.set((e.clientX-r.left)/r.width*6-3);
  }
- return <motion.div className="hero-scene" id="work" role="img" aria-label="A red retro computer printing Abdulaziz's CV, with a coffee mug, books, a sleeping cat, and notes: Always learning; Good ideas build better tomorrows." initial={reduced?false:{opacity:0}} animate={{opacity:1}} transition={{duration:.8,delay:.15}} onPointerMove={move} onPointerLeave={()=>px.set(0)}>
+ return <motion.div className="hero-scene" id="hero-scene" role="img" aria-label="A red retro computer printing Abdulaziz's CV, with a coffee mug, books, a sleeping cat, and notes: Always learning; Good ideas build better tomorrows." initial={reduced?false:{opacity:0}} animate={{opacity:1}} transition={{duration:.8,delay:.15}} onPointerMove={move} onPointerLeave={()=>px.set(0)}>
  {sceneItems.map(item=>{
   const bubble=item.name==='learning'||item.name==='ideas';
   const position={'--left':`${item.left}%`,'--top':`${item.top}%`,'--width':`${item.width}%`,'--contact-offset':item.contact===undefined?undefined:`${item.contact}cqw`,zIndex:item.layer} as CSSProperties;

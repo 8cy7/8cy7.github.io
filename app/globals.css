@@ -105,3 +105,82 @@ main { overflow-x:clip; }
 @media (max-width:767px) {
  h1 { font-size:clamp(54px,16.5vw,110px); }
 }
+
+/* Selected work: the hero's pixel typography and warm palette in a dark window UI. */
+.hero { margin-bottom:72px; }
+.projects-section { --project-cream:#f7f4ee; --pin-top:128px; position:relative; z-index:10; margin-top:-40px; border-radius:36px 36px 0 0; background:#0c0c0c; color:var(--project-cream); scroll-margin-top:24px; }
+.projects-shell { padding-top:76px; padding-bottom:40px; }
+.projects-heading { margin-bottom:52px; }
+.projects-heading p { margin:0 0 15px; color:#f7795c; font-size:14px; letter-spacing:1.5px; }
+.projects-heading h2 { margin:0; font:700 clamp(66px,7.8vw,112px)/.9 var(--pixel); letter-spacing:-.035em; }
+.projects-heading h2 span { color:var(--coral); }
+.project-stack { position:relative; padding-bottom:12svh; }
+.project-step { position:sticky; top:calc(var(--pin-top) + var(--card-offset)); height:85svh; min-height:600px; }
+.project-card { transform-origin:top center; background:#0c0c0c; border:1px solid #d7e2ea; border-radius:12px; overflow:hidden; box-shadow:0 -12px 36px rgb(0 0 0 / 18%); }
+.project-window-bar { display:flex; justify-content:space-between; align-items:center; min-height:38px; padding:0 24px; border-bottom:1px solid rgb(215 226 234 / 30%); font-size:12px; letter-spacing:2px; color:#c1c1bb; }
+.project-window-marks { display:flex; gap:7px; }
+.project-window-marks i { width:7px; height:7px; border:1px solid #858783; }
+.project-window-marks i:last-child { border-color:var(--coral); background:var(--coral); }
+.project-content { padding:24px; }
+.project-card-header { display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; column-gap:26px; margin-bottom:24px; }
+.project-number { color:var(--coral); font:700 clamp(64px,6.5vw,96px)/.8 var(--pixel); letter-spacing:-.045em; }
+.project-category { margin:0 0 9px; text-transform:uppercase; font-size:12px; letter-spacing:1.5px; color:#c1c1bb; }
+.project-identity h3 { margin:0; font:700 clamp(30px,3.5vw,50px)/1 var(--pixel); letter-spacing:-.025em; }
+.live-project { display:inline-flex; align-items:center; justify-content:center; gap:22px; padding:15px 23px; border:1px solid #d7e2ea; border-radius:3px; background:transparent; color:var(--project-cream); font:400 12px/1.4 'Space Mono',monospace; letter-spacing:1.5px; white-space:nowrap; transition:background .2s,color .2s,border-color .2s; }
+.live-project span { font-size:21px; line-height:1; }
+.live-project:not(:disabled):hover { background:var(--coral); border-color:var(--coral); color:#0c0c0c; }
+.live-project:disabled { opacity:.55; cursor:not-allowed; }
+.project-gallery { display:grid; grid-template-columns:2fr 3fr; gap:16px; height:min(46svh,570px,calc(100svh - var(--pin-top) - 56px - 216px)); min-height:260px; }
+.project-gallery-left { display:grid; grid-template-rows:2fr 3fr; gap:16px; min-height:0; }
+.project-gallery img { display:block; width:100%; height:100%; min-height:0; object-fit:cover; border-radius:8px; background:#20201d; border:1px solid rgb(215 226 234 / 18%); }
+@media (max-width:1023px) {
+ .projects-section { --pin-top:96px; }
+ .project-content { padding:20px; }
+ .project-card-header { column-gap:18px; }
+ .project-identity h3 { font-size:34px; }
+ .live-project { padding:13px 16px; gap:14px; font-size:11px; }
+}
+@media (max-width:767px) {
+ .hero { margin-bottom:64px; }
+ .projects-section { border-radius:24px 24px 0 0; margin-top:-32px; }
+ .projects-shell { padding:48px 16px 24px; }
+ .projects-heading { margin-bottom:32px; padding-inline:8px; }
+ .projects-heading p { font-size:12px; margin-bottom:12px; }
+ .projects-heading h2 { font-size:clamp(54px,14vw,88px); }
+ .project-step { min-height:560px; }
+ .project-card { border-radius:10px; }
+ .project-window-bar { padding-inline:16px; min-height:32px; font-size:10px; }
+ .project-content { padding:16px; }
+ .project-card-header { grid-template-columns:50px minmax(0,1fr); column-gap:14px; row-gap:16px; margin-bottom:18px; }
+ .project-number { font-size:56px; }
+ .project-category { font-size:10px; margin-bottom:6px; }
+ .project-identity h3 { font-size:30px; }
+ .live-project { grid-column:2; justify-self:start; padding:10px 14px; font-size:10px; gap:18px; }
+ .project-gallery { height:clamp(250px,36svh,390px); min-height:0; gap:10px; }
+ .project-gallery-left { gap:10px; }
+ .project-gallery img { border-radius:6px; }
+}
+/* Short viewports and reduced motion keep all content reachable without scroll pinning. */
+@media (max-height:650px), (prefers-reduced-motion:reduce) {
+ .project-stack { padding-bottom:0; }
+ .project-step { position:relative; top:auto; height:auto; min-height:0; margin-bottom:32px; }
+ .project-card { transform:none!important; }
+ .project-gallery { height:clamp(260px,45vw,500px); }
+}
+/* Space the starts by roughly one viewport while pinning only the visible card. */
+.project-step { height:auto; min-height:0; margin-bottom:0; }
+.project-gap { height:18svh; }
+.project-step:last-child { margin-bottom:0; }
+.project-stack { padding-bottom:var(--closing-space,72px); }
+@media (max-height:650px), (prefers-reduced-motion:reduce) {
+ .project-step { margin-bottom:0; }
+ .project-gap { height:32px; }
+ .project-stack { padding-bottom:0; }
+}
+@media (max-width:767px) {
+ .project-card-header { grid-template-columns:68px minmax(0,1fr); }
+ .project-identity h3 { font-size:28px; }
+}
+@media (max-height:650px), (prefers-reduced-motion:reduce) {
+ .project-stack { padding-bottom:0; }
+}
