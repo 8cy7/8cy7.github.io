@@ -66,7 +66,7 @@ h1 span { display:block; }
  .description { order:1; font-size:14px; line-height:1.8; margin:24px 0 15px; max-width:410px; }.desktop-break { display:none; }.sticky-notes { order:2; gap:18px; margin:10px 0 26px; width:100%; max-width:475px; }.sticky-notes li { padding-inline:0; }
  .hero-actions { order:3; gap:24px; }.primary-cta { font-size:30px; padding:18px 24px; min-width:0; width:min(100%,345px); }.work-link { font-size:14px; margin-left:0; }
  .hero-scene { width:calc(100vw - 12px); margin:47px 0 12px; aspect-ratio:.94; }
- .scene-computer { left:10%; top:13%; width:80%; }.scene-platform { left:0; top:76%; width:100%; }.scene-learning { left:9%; top:1%; width:29%; }.scene-ideas { left:70%; top:0; width:25%; }.scene-cv { left:24%; top:76%; width:29%; }.scene-button { left:2%; top:69%; width:18%; }.scene-mug { left:62%; top:72%; width:17%; }.scene-books { left:79%; top:72%; width:21%; }.scene-cat { left:70%; top:86%; width:24%; }
+ .scene-computer { left:10%; top:13%; width:80%; }.scene-platform { left:0; top:76%; width:100%; }.scene-learning { left:9%; top:1%; width:29%; }.scene-ideas { left:70%; top:0; width:25%; }.scene-cv { left:24%; top:76%; width:29%; }.scene-mug { left:2%; top:69%; width:18%; }.scene-books { left:79%; top:72%; width:21%; }.scene-cat { left:70%; top:86%; width:24%; }
  .hero-footer { padding-bottom:25px; }.location { font-size:10px; letter-spacing:.8px; gap:8px; }.scroll-link { font-size:10px; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }*,*::before,*::after { animation:none!important; transition:none!important; } }
