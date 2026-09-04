@@ -40,7 +40,8 @@ h1 span { display:block; }
 .primary-cta:hover { transform:translateY(-2px); box-shadow:5px 5px 0 var(--coral); }
 .cta-arrow { position:absolute; right:18px; top:17px; font-size:28px; }
 .work-link { font-size:17px; letter-spacing:1px; border-bottom:2px solid currentColor; padding-bottom:3px; margin-left:6px; }
-.hero-scene { position:relative; width:calc(100% + 128px); margin-left:-85px; aspect-ratio:1; isolation:isolate; overflow:clip; }
+/* Let original image edges and floating bubbles extend beyond the scene box. */
+.hero-scene { position:relative; width:calc(100% + 128px); margin-left:-85px; aspect-ratio:1; isolation:isolate; overflow:visible; }
 .scene-item { position:absolute; left:var(--left); top:var(--top); width:var(--width); }
 .hero-footer { display:flex; align-items:flex-end; justify-content:space-between; padding:8px 0 30px; margin-top:-5px; }
 .scroll-link { display:flex; flex-direction:column; gap:5px; align-items:center; font-size:12px; color:#565452; letter-spacing:1px; }
