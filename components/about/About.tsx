@@ -22,7 +22,6 @@ export function About() {
       </motion.header>
 
       <motion.article className="profile-card" initial={false} whileInView={reveal} viewport={{ once: true, amount: 0.15 }} transition={{ delay: 0.08 }}>
-        <div className="profile-window-bar" aria-hidden="true"><span>AAF_PROFILE.EXE</span><i /><span>RIYADH / ONLINE ●</span></div>
         <div className="profile-main">
           <div className="profile-role" aria-label="Engineer, builder and entrepreneur">
             <span>ENGINEER.</span><span>BUILDER.</span><span>ENTREPRENEUR.</span>

@@ -106,18 +106,15 @@ main { overflow-x:clip; }
  h1 { font-size:clamp(54px,16.5vw,110px); }
 }
 
-/* About: one cohesive retro profile window rather than two disconnected columns. */
-.about-section { position:relative; background:var(--background); scroll-margin-top:32px; }
-.about-shell { padding-top:64px; padding-bottom:128px; }
+/* About uses the same full-bleed dark stage as selected work. */
+.about-section { position:relative; z-index:10; margin-top:-40px; border-radius:36px 36px 0 0; background:#0c0c0c; color:var(--background); scroll-margin-top:24px; }
+.about-shell { padding-top:76px; padding-bottom:164px; }
 .about-heading > p,.experience-heading > p { margin:0 0 17px; color:var(--coral-text); font-size:14px; letter-spacing:1.5px; }
 .about-heading { margin-bottom:48px; }
 .about-heading h2 { margin:0; font:700 clamp(66px,7.8vw,112px)/.9 var(--pixel); letter-spacing:-.04em; }
 .about-heading h2 span { color:var(--coral); }
-.profile-card { overflow:hidden; border:1px solid #3b3b38; background:#151515; color:var(--background); box-shadow:9px 9px 0 var(--coral); }
-.profile-window-bar { min-height:44px; padding:0 22px; display:flex; align-items:center; gap:18px; border-bottom:1px solid #454541; color:#aaa9a3; font-size:10px; letter-spacing:1.5px; }
-.profile-window-bar i { flex:1; height:1px; background:#454541; }
-.profile-window-bar span:last-child { color:#f7795c; }
-.profile-main { display:grid; grid-template-columns:minmax(330px,.88fr) minmax(420px,1.12fr); gap:clamp(48px,7vw,110px); padding:clamp(42px,5vw,72px); }
+.profile-card { color:var(--background); }
+.profile-main { display:grid; grid-template-columns:minmax(330px,.88fr) minmax(420px,1.12fr); gap:clamp(48px,7vw,110px); padding:16px 0 64px; }
 .profile-role { display:flex; flex-direction:column; justify-content:center; color:var(--background); font:700 clamp(46px,5.4vw,78px)/.88 var(--pixel); letter-spacing:-.04em; }
 .profile-role span:last-child { color:#f7795c; }
 .about-copy { align-self:center; }
@@ -129,15 +126,15 @@ main { overflow-x:clip; }
 .about-status div { display:flex; flex-direction:column; gap:5px; }
 .about-status small { color:#999891; font-size:10px; letter-spacing:1.5px; }
 .about-status strong { font-family:var(--pixel); font-size:18px; }
-.achievement-grid { display:grid; grid-template-columns:repeat(5,1fr); list-style:none; padding:0; margin:0; border-top:1px solid #454541; }
+.achievement-grid { display:grid; grid-template-columns:repeat(5,1fr); list-style:none; padding:0; margin:0; border:1px solid #454541; }
 .achievement-grid li { min-height:150px; padding:24px 22px 21px; display:flex; flex-direction:column; justify-content:space-between; border-right:1px solid #454541; }
 .achievement-grid li:last-child { border-right:0; }
 .achievement-grid li > span { color:#f7795c; font:700 clamp(42px,4vw,62px)/.9 var(--pixel); letter-spacing:-.04em; }
 .achievement-grid li > p { max-width:150px; margin:23px 0 0; color:#b7b6b0; font-size:10px; line-height:1.55; letter-spacing:1px; }
 
 /* Services share the hero's palette and use small, complete 3D cutouts. */
-.services-section { position:relative; background:var(--background); scroll-margin-top:32px; }
-.services-shell { padding-top:32px; padding-bottom:128px; }
+.services-section { position:relative; z-index:11; margin-top:-40px; border-radius:36px 36px 0 0; background:var(--background); scroll-margin-top:32px; }
+.services-shell { padding-top:76px; padding-bottom:128px; }
 .services-heading { margin-bottom:54px; }
 .services-heading > p { color:var(--coral-text); font-size:14px; letter-spacing:1.5px; margin:0 0 16px; }
 .services-heading h2 { margin:0; font:700 clamp(58px,7.8vw,112px)/.95 var(--pixel); letter-spacing:-.035em; }
@@ -160,7 +157,8 @@ main { overflow-x:clip; }
  .services-shell { padding-bottom:104px; }
 }
 @media (max-width:767px) {
- .services-shell { padding-top:12px; padding-bottom:88px; }
+ .services-section { margin-top:-32px; border-radius:24px 24px 0 0; }
+ .services-shell { padding-top:52px; padding-bottom:88px; }
  .services-heading { margin-bottom:32px; }
  .services-heading h2 { font-size:clamp(42px,11.5vw,76px); }
  .services-heading > p { font-size:14px; }
@@ -289,12 +287,11 @@ main { overflow-x:clip; }
 }
 
 @media (max-width:767px) {
- .about-shell { padding-top:36px; padding-bottom:88px; }
+ .about-section { margin-top:-32px; border-radius:24px 24px 0 0; }
+ .about-shell { padding-top:52px; padding-bottom:116px; }
  .about-heading { margin-bottom:30px; }
  .about-heading h2 { font-size:clamp(54px,15vw,82px); }
- .profile-card { box-shadow:6px 6px 0 var(--coral); }
- .profile-window-bar { min-height:38px; padding-inline:14px; gap:10px; font-size:8px; letter-spacing:.8px; }
- .profile-main { padding:30px 20px 34px; gap:30px; }
+ .profile-main { padding:12px 0 40px; gap:30px; }
  .profile-role { font-size:clamp(35px,9.7vw,47px); line-height:.94; }
  .about-copy .about-lead { font-size:24px; }
  .about-copy > p { font-size:16px; }
