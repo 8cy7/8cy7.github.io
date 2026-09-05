@@ -3,16 +3,18 @@ export type Project = {
   name: string;
   category: 'Client' | 'Personal';
   liveUrl: string | null;
+  detailUrl?: string;
+  format?: 'mobile';
   images: { src: string; alt: string }[];
 };
 
 export const projects: Project[] = [
   {
-    id: '01', name: 'Nextlevel Studio', category: 'Client', liveUrl: null,
+    id: '01', name: 'Sanal Mobile App', category: 'Client', liveUrl: null, detailUrl: '/projects/sanal-mobile-app', format: 'mobile',
     images: [
-      { src: '/assets/projects/project-1-1.webp', alt: 'Colorful flowers in a lush, softly lit garden' },
-      { src: '/assets/projects/project-1-2.webp', alt: 'Close-up of vivid flowers and green foliage' },
-      { src: '/assets/projects/project-1-3.webp', alt: 'Glowing garden scene framed by flowers' },
+      { src: '/assets/projects/sanal-mobile/recommendations.png', alt: 'Sanal conversational shopping recommendations screen' },
+      { src: '/assets/projects/sanal-mobile/checkout.png', alt: 'Sanal order summary and checkout screen' },
+      { src: '/assets/projects/sanal-mobile/home.png', alt: 'Sanal mobile app conversational home screen' },
     ],
   },
   {
