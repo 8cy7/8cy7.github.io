@@ -4,7 +4,7 @@ export type Project = {
   category: 'Client' | 'Personal';
   liveUrl: string | null;
   detailUrl?: string;
-  format?: 'mobile';
+  format?: 'mobile' | 'website';
   images: { src: string; alt: string }[];
 };
 
@@ -26,11 +26,11 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: '03', name: 'Solaris Digital', category: 'Client', liveUrl: null,
+    id: '03', name: 'Juz Agency Website', category: 'Client', liveUrl: null, detailUrl: '/projects/juz-agency-website', format: 'website',
     images: [
-      { src: '/assets/projects/project-3-1.webp', alt: 'Golden flower fields and mountains reflected in a lake' },
-      { src: '/assets/projects/project-3-2.webp', alt: 'Sunflower fields stretching toward sunlit mountains' },
-      { src: '/assets/projects/project-3-3.webp', alt: 'Sunflowers in warm evening light' },
+      { src: '/assets/projects/juz-agency/hero.webp', alt: 'Juz Agency Arabic website hero' },
+      { src: '/assets/projects/juz-agency/media-work.webp', alt: 'Juz Agency media work showcase' },
+      { src: '/assets/projects/juz-agency/projects.webp', alt: 'Juz Agency project portfolio' },
     ],
   },
 ];
