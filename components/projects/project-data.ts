@@ -33,4 +33,12 @@ export const projects: Project[] = [
       { src: '/assets/projects/juz-agency/projects.webp', alt: 'Juz Agency project portfolio' },
     ],
   },
+  {
+    id: '04', name: 'SPL CX Employee Event', category: 'Client', liveUrl: null, detailUrl: '/projects/spl-cx-employee-event', format: 'website',
+    images: [
+      { src: '/assets/projects/spl-event/event-hub.webp', alt: 'SPL World Customer Experience Day activity hub' },
+      { src: '/assets/projects/spl-event/service-quiz.webp', alt: 'Interactive SPL service knowledge question' },
+      { src: '/assets/projects/spl-event/spot-difference.webp', alt: 'SPL spot the difference employee game' },
+    ],
+  },
 ];
