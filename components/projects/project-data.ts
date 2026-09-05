@@ -18,11 +18,11 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: '02', name: 'Aura Brand Identity', category: 'Personal', liveUrl: null,
+    id: '02', name: '99 Names of Allah', category: 'Personal', liveUrl: null, detailUrl: '/projects/99-names-of-allah', format: 'mobile',
     images: [
-      { src: '/assets/projects/project-2-1.webp', alt: 'Lavender flowers beneath a rugged mountain range' },
-      { src: '/assets/projects/project-2-2.webp', alt: 'Rows of lavender leading toward purple mountains' },
-      { src: '/assets/projects/project-2-3.webp', alt: 'Purple flowers beside a quiet mountain lake' },
+      { src: '/assets/projects/asma-allah/daily-name.webp', alt: 'Daily Name of Allah learning screen' },
+      { src: '/assets/projects/asma-allah/name-detail.webp', alt: 'Meaning and evidence for one of the Names of Allah' },
+      { src: '/assets/projects/asma-allah/all-names.webp', alt: 'Searchable list of the 99 Names of Allah' },
     ],
   },
   {
