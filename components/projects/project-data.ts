@@ -41,4 +41,12 @@ export const projects: Project[] = [
       { src: '/assets/projects/spl-event/spot-difference.webp', alt: 'SPL spot the difference employee game' },
     ],
   },
+  {
+    id: '05', name: 'Sanal Company Website', category: 'Client', liveUrl: null, detailUrl: '/projects/sanal-company-website', format: 'website',
+    images: [
+      { src: '/assets/projects/sanal-website/hero.webp', alt: 'Sanal Arabic company website hero' },
+      { src: '/assets/projects/sanal-website/platform.webp', alt: 'Sanal AI commerce execution layer overview' },
+      { src: '/assets/projects/sanal-website/sectors.webp', alt: 'Business sectors supported by Sanal' },
+    ],
+  },
 ];
