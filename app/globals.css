@@ -106,6 +106,29 @@ main { overflow-x:clip; }
  h1 { font-size:clamp(54px,16.5vw,110px); }
 }
 
+/* About: an editorial profile paired with a compact achievements readout. */
+.about-section { position:relative; background:var(--background); scroll-margin-top:32px; }
+.about-shell { padding-top:64px; padding-bottom:132px; }
+.about-intro { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(380px,.95fr); gap:clamp(52px,8vw,130px); align-items:start; }
+.about-heading > p,.experience-heading > p { margin:0 0 17px; color:var(--coral-text); font-size:14px; letter-spacing:1.5px; }
+.about-heading h2 { margin:0; font:700 clamp(58px,6.9vw,104px)/.86 var(--pixel); letter-spacing:-.04em; }
+.about-heading h2 span { color:var(--coral-text); }
+.about-copy { padding-top:34px; }
+.about-readout { display:flex; align-items:center; gap:15px; margin-bottom:32px; color:var(--coral-text); font-size:11px; letter-spacing:1.5px; }
+.about-readout i { flex:1; height:1px; background:rgb(20 20 20 / 24%); }
+.about-copy > p { margin:0; color:var(--muted); font-size:16px; line-height:1.8; }
+.about-copy .about-lead { margin-bottom:22px; color:var(--foreground); font:700 clamp(22px,2.15vw,32px)/1.45 var(--pixel); }
+.about-status { display:flex; align-items:center; gap:15px; margin-top:34px; padding:18px 20px; border:1px solid rgb(20 20 20 / 35%); box-shadow:4px 4px 0 var(--coral); }
+.about-status > span { color:var(--coral); font-size:17px; }
+.about-status div { display:flex; flex-direction:column; gap:5px; }
+.about-status small { color:var(--muted); font-size:10px; letter-spacing:1.5px; }
+.about-status strong { font-family:var(--pixel); font-size:18px; }
+.achievement-grid { display:grid; grid-template-columns:repeat(5,1fr); list-style:none; padding:0; margin:88px 0 0; border:1px solid var(--foreground); }
+.achievement-grid li { min-height:190px; padding:27px 22px 24px; display:flex; flex-direction:column; justify-content:space-between; border-right:1px solid var(--foreground); }
+.achievement-grid li:last-child { border-right:0; }
+.achievement-grid li > span { color:var(--coral-text); font:700 clamp(44px,4.2vw,66px)/.9 var(--pixel); letter-spacing:-.04em; }
+.achievement-grid li > p { max-width:150px; margin:26px 0 0; font-size:11px; line-height:1.55; letter-spacing:1px; }
+
 /* Services share the hero's palette and use small, complete 3D cutouts. */
 .services-section { position:relative; background:var(--background); scroll-margin-top:32px; }
 .services-shell { padding-top:32px; padding-bottom:128px; }
@@ -220,4 +243,66 @@ main { overflow-x:clip; }
 }
 @media (max-height:650px), (prefers-reduced-motion:reduce) {
  .project-stack { padding-bottom:0; }
+}
+
+/* Experience continues out of the dark project stage like a printed work log. */
+.experience-section { position:relative; z-index:12; margin-top:-1px; border-radius:36px 36px 0 0; background:var(--background); color:var(--foreground); scroll-margin-top:24px; }
+.experience-shell { padding-top:108px; padding-bottom:132px; }
+.experience-heading { margin-bottom:58px; }
+.experience-heading h2 { margin:0; font:700 clamp(64px,7.8vw,112px)/.9 var(--pixel); letter-spacing:-.035em; }
+.experience-heading h2 span { color:var(--coral); }
+.experience-list { border-top:1px solid var(--foreground); }
+.experience-item { display:grid; grid-template-columns:120px 220px minmax(0,1fr); column-gap:clamp(24px,4vw,64px); padding:42px 0 46px; border-bottom:1px solid rgb(20 20 20 / 30%); }
+.experience-number { color:var(--coral-text); font:700 clamp(58px,6vw,86px)/.85 var(--pixel); letter-spacing:-.05em; }
+.experience-meta { display:flex; flex-direction:column; gap:12px; padding-top:5px; color:var(--muted); font-size:11px; line-height:1.5; letter-spacing:1.3px; }
+.experience-body > p { margin:0 0 9px; color:var(--coral-text); font-size:12px; font-weight:700; letter-spacing:1.5px; }
+.experience-body h3 { margin:0; font:700 clamp(30px,3.1vw,46px)/1 var(--pixel); letter-spacing:-.02em; }
+.experience-body ul { list-style:none; padding:0; margin:25px 0 0; display:grid; gap:12px; }
+.experience-body li { position:relative; padding-left:24px; color:var(--muted); font-size:15px; line-height:1.7; }
+.experience-body li::before { content:'>'; position:absolute; left:0; color:var(--coral-text); font-weight:700; }
+.education-strip { display:grid; grid-template-columns:190px minmax(260px,.9fr) minmax(0,1fr); gap:28px; align-items:center; margin-top:58px; padding:27px 30px; background:#191919; color:var(--background); box-shadow:6px 6px 0 var(--coral); }
+.education-strip > span { color:#f7795c; font-size:11px; letter-spacing:1.5px; }
+.education-strip > strong { font-family:var(--pixel); font-size:21px; }
+.education-strip > p { margin:0; color:#c1c1bb; font-size:12px; line-height:1.6; }
+.education-strip i { display:inline-block; width:5px; height:5px; margin:0 9px 2px; background:var(--coral); }
+
+@media (max-width:1023px) {
+ .about-intro { grid-template-columns:1fr; gap:44px; }
+ .about-copy { max-width:720px; padding-top:0; }
+ .achievement-grid { grid-template-columns:repeat(3,1fr); }
+ .achievement-grid li { min-height:165px; }
+ .achievement-grid li:nth-child(3) { border-right:0; }
+ .achievement-grid li:nth-child(n+4) { border-top:1px solid var(--foreground); }
+ .achievement-grid li:last-child { grid-column:span 2; }
+ .experience-item { grid-template-columns:90px minmax(0,1fr); }
+ .experience-meta { grid-column:2; grid-row:1; flex-direction:row; justify-content:space-between; padding:5px 0 22px; }
+ .experience-body { grid-column:2; }
+ .education-strip { grid-template-columns:150px minmax(0,1fr); }
+ .education-strip > p { grid-column:2; }
+}
+
+@media (max-width:767px) {
+ .about-shell { padding-top:36px; padding-bottom:88px; }
+ .about-heading h2 { font-size:clamp(48px,14.7vw,78px); }
+ .about-copy .about-lead { font-size:24px; }
+ .about-copy > p { font-size:16px; }
+ .about-status { align-items:flex-start; padding:16px; }
+ .achievement-grid { grid-template-columns:repeat(2,1fr); margin-top:58px; }
+ .achievement-grid li { min-height:145px; padding:21px 16px; }
+ .achievement-grid li:nth-child(2) { border-right:0; }
+ .achievement-grid li:nth-child(3) { border-right:1px solid var(--foreground); border-top:1px solid var(--foreground); }
+ .achievement-grid li:nth-child(4) { border-right:0; border-top:1px solid var(--foreground); }
+ .achievement-grid li:last-child { grid-column:span 2; border-top:1px solid var(--foreground); }
+ .achievement-grid li > span { font-size:48px; }
+ .experience-section { border-radius:24px 24px 0 0; }
+ .experience-shell { padding-top:76px; padding-bottom:92px; }
+ .experience-heading { margin-bottom:36px; }
+ .experience-heading h2 { font-size:clamp(49px,13vw,78px); }
+ .experience-item { grid-template-columns:54px minmax(0,1fr); gap:16px; padding:30px 0 34px; }
+ .experience-number { font-size:48px; }
+ .experience-meta { flex-direction:column; gap:6px; padding:0 0 19px; font-size:10px; }
+ .experience-body h3 { font-size:30px; }
+ .experience-body li { font-size:15px; padding-left:20px; }
+ .education-strip { grid-template-columns:1fr; gap:10px; padding:23px 20px; }
+ .education-strip > p { grid-column:1; }
 }
