@@ -14,7 +14,7 @@ const screens = [
 ];
 
 export default function NamesOfAllahPage() {
-  return <main className="case-page asma-case" id="main">
+  return <main className="case-page" id="main">
     <nav className="case-nav shell" aria-label="Project navigation">
       <a className="case-brand" href="/">✳ <span>AAF.</span></a>
       <a className="case-back" href="/#work">← BACK TO PROJECTS</a>

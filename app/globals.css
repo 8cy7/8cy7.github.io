@@ -407,15 +407,6 @@ main { overflow-x:clip; }
 .case-next a span { color:#aaa9a3; font-size:11px; letter-spacing:1.4px; }
 .case-next a strong { font:700 clamp(38px,5vw,72px)/1 var(--pixel); }
 
-.asma-case .case-hero { background:#111a38; }
-.asma-case .case-kicker,.asma-case .case-overview header > p { color:#f4b719; }
-.asma-case h1 span,.asma-case .case-overview h2 span { color:#f4b719; }
-.asma-case .case-gallery { background:#111a38; color:var(--background); }
-.asma-case .case-gallery-kicker { color:#f4b719; }
-.asma-case .case-gallery h2 span { color:#f4b719; }
-.asma-case .phone-frame { border-color:#f4b719; box-shadow:12px 14px 0 rgb(244 183 25 / 24%); }
-.asma-case .case-screens figcaption span { color:#f4b719; }
-
 @media (max-width:1023px) {
  .case-summary-row { grid-template-columns:1fr; gap:48px; }
  .case-overview { grid-template-columns:1fr; gap:34px; }
