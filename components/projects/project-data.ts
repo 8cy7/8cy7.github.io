@@ -49,4 +49,12 @@ export const projects: Project[] = [
       { src: '/assets/projects/sanal-website/sectors.webp', alt: 'Business sectors supported by Sanal' },
     ],
   },
+  {
+    id: '06', name: 'Traoubi Saudi Landing Page', category: 'Client', liveUrl: null, detailUrl: '/projects/traoubi-saudi-landing-page', format: 'website',
+    images: [
+      { src: '/assets/projects/traoubi/hero.webp', alt: 'Traoubi Saudi Arabic product landing page hero' },
+      { src: '/assets/projects/traoubi/flavors.webp', alt: 'Traoubi flavor and product showcase' },
+      { src: '/assets/projects/traoubi/packages.webp', alt: 'Traoubi package selection and shopping interface' },
+    ],
+  },
 ];
