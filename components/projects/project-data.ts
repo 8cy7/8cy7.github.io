@@ -57,4 +57,12 @@ export const projects: Project[] = [
       { src: '/assets/projects/traoubi/packages.webp', alt: 'Traoubi package selection and shopping interface' },
     ],
   },
+  {
+    id: '07', name: 'Sharh AI Learning Platform', category: 'Personal', liveUrl: null, detailUrl: '/projects/sharh-ai-learning-platform', format: 'website',
+    images: [
+      { src: '/assets/projects/sharh-ai/hero.webp', alt: 'Sharh AI Arabic learning platform landing page' },
+      { src: '/assets/projects/sharh-ai/upload.webp', alt: 'PDF upload flow in Sharh AI' },
+      { src: '/assets/projects/sharh-ai/progress.webp', alt: 'Learning progress analytics in Sharh AI' },
+    ],
+  },
 ];
