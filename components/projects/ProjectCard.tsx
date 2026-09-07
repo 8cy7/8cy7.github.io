@@ -22,12 +22,23 @@ export function ProjectCard({ project, index, totalCards, progress, reducedMotio
           <div className="project-identity"><p className="project-category">// {project.category}</p><h3 id={`project-title-${project.id}`}>{project.name}</h3></div>
           {project.detailUrl ? <a className="live-project case-study-link" href={project.detailUrl}>VIEW CASE <span aria-hidden="true">→</span></a> : <LiveProjectButton href={project.liveUrl} name={project.name}/>}
         </header>
-        <div className="project-gallery">
-          <div className="project-gallery-left">
-            {project.images.slice(0, 2).map((image) => <img key={image.src} src={image.src} alt={image.alt} width={1280} height={956} loading="lazy" decoding="async" draggable={false}/>) }
+        {project.format === 'mobile' ? (
+          <div className="project-mobile-stage">
+            {project.images.map((image, imageIndex) => (
+              <div className={`project-phone-preview phone-${imageIndex + 1}`} key={image.src}>
+                <span className="project-phone-speaker" aria-hidden="true" />
+                <img src={image.src} alt={image.alt} width={1290} height={2796} loading="lazy" decoding="async" draggable={false}/>
+              </div>
+            ))}
           </div>
-          <img className="project-gallery-tall" src={project.images[2].src} alt={project.images[2].alt} width={1280} height={956} loading="lazy" decoding="async" draggable={false}/>
-        </div>
+        ) : (
+          <div className="project-gallery">
+            <div className="project-gallery-left">
+              {project.images.slice(0, 2).map((image) => <img key={image.src} src={image.src} alt={image.alt} width={1280} height={956} loading="lazy" decoding="async" draggable={false}/>) }
+            </div>
+            <img className="project-gallery-tall" src={project.images[2].src} alt={project.images[2].alt} width={1280} height={956} loading="lazy" decoding="async" draggable={false}/>
+          </div>
+        )}
       </div>
     </motion.article>
   </div>;

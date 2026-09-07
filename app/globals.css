@@ -172,7 +172,7 @@ main { overflow-x:clip; }
 
 /* Selected work: the hero's pixel typography and warm palette in a dark window UI. */
 .hero { margin-bottom:72px; }
-.projects-section { --project-cream:#f7f4ee; --pin-top:128px; position:relative; z-index:10; margin-top:-40px; border-radius:36px 36px 0 0; background:#0c0c0c; color:var(--project-cream); scroll-margin-top:24px; }
+.projects-section { --project-cream:#f7f4ee; --pin-top:128px; position:relative; z-index:10; margin-top:-40px; border-radius:60px 60px 0 0; background:#0c0c0c; color:var(--project-cream); scroll-margin-top:24px; overflow:clip; }
 .projects-shell { padding-top:76px; padding-bottom:40px; }
 .projects-heading { margin-bottom:52px; }
 .projects-heading p { margin:0 0 15px; color:#f7795c; font-size:14px; letter-spacing:1.5px; }
@@ -180,7 +180,7 @@ main { overflow-x:clip; }
 .projects-heading h2 span { color:var(--coral); }
 .project-stack { position:relative; padding-bottom:12svh; }
 .project-step { position:sticky; top:calc(var(--pin-top) + var(--card-offset)); height:85svh; min-height:600px; }
-.project-card { transform-origin:top center; background:#0c0c0c; border:1px solid #d7e2ea; border-radius:12px; overflow:hidden; box-shadow:0 -12px 36px rgb(0 0 0 / 18%); }
+.project-card { transform-origin:top center; background:#0c0c0c; border:1px solid #d7e2ea; border-radius:30px; overflow:hidden; box-shadow:0 -12px 36px rgb(0 0 0 / 18%); }
 .project-card.has-detail { position:relative; cursor:pointer; }
 .project-card-hitbox { position:absolute; inset:0; z-index:5; }
 .case-study-link { position:relative; z-index:6; }
@@ -200,7 +200,12 @@ main { overflow-x:clip; }
 .project-gallery { display:grid; grid-template-columns:2fr 3fr; gap:16px; height:min(46svh,570px,calc(100svh - var(--pin-top) - 56px - 216px)); min-height:260px; }
 .project-gallery-left { display:grid; grid-template-rows:2fr 3fr; gap:16px; min-height:0; }
 .project-gallery img { display:block; width:100%; height:100%; min-height:0; object-fit:cover; border-radius:8px; background:#20201d; border:1px solid rgb(215 226 234 / 18%); }
-.mobile-project .project-gallery img { object-fit:contain; background:#f3f4f5; }
+.project-mobile-stage { position:relative; display:flex; align-items:flex-end; justify-content:center; gap:clamp(18px,3.2vw,48px); height:min(46svh,570px,calc(100svh - var(--pin-top) - 56px - 216px)); min-height:300px; padding:clamp(22px,3vw,42px) clamp(20px,4vw,64px) 0; overflow:hidden; border:1px solid rgb(215 226 234 / 18%); border-radius:24px; background:var(--coral); }
+.project-mobile-stage::before { content:''; position:absolute; inset:0; opacity:.17; background-image:linear-gradient(rgb(12 12 12 / 28%) 1px,transparent 1px),linear-gradient(90deg,rgb(12 12 12 / 28%) 1px,transparent 1px); background-size:28px 28px; }
+.project-phone-preview { position:relative; z-index:1; flex:0 1 238px; height:calc(100% - 4px); max-width:238px; padding:9px; overflow:hidden; border:2px solid #0c0c0c; border-bottom:0; border-radius:32px 32px 0 0; background:#0c0c0c; box-shadow:10px 0 0 rgb(12 12 12 / 15%); }
+.project-phone-preview.phone-1,.project-phone-preview.phone-3 { height:88%; opacity:.94; }
+.project-phone-preview img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; border:0; border-radius:23px 23px 0 0; background:white; }
+.project-phone-speaker { position:absolute; z-index:2; top:16px; left:50%; width:34%; height:5px; border-radius:99px; background:#0c0c0c; transform:translateX(-50%); opacity:.86; }
 @media (max-width:1023px) {
  .projects-section { --pin-top:96px; }
  .project-content { padding:20px; }
@@ -210,13 +215,13 @@ main { overflow-x:clip; }
 }
 @media (max-width:767px) {
  .hero { margin-bottom:64px; }
- .projects-section { border-radius:24px 24px 0 0; margin-top:-32px; }
+ .projects-section { border-radius:36px 36px 0 0; margin-top:-32px; }
  .projects-shell { padding:48px 16px 24px; }
  .projects-heading { margin-bottom:32px; padding-inline:8px; }
  .projects-heading p { font-size:12px; margin-bottom:12px; }
  .projects-heading h2 { font-size:clamp(54px,14vw,88px); }
  .project-step { min-height:560px; }
- .project-card { border-radius:10px; }
+ .project-card { border-radius:22px; }
  .project-window-bar { padding-inline:16px; min-height:32px; font-size:10px; }
  .project-content { padding:16px; }
  .project-card-header { grid-template-columns:50px minmax(0,1fr); column-gap:14px; row-gap:16px; margin-bottom:18px; }
@@ -227,6 +232,11 @@ main { overflow-x:clip; }
  .project-gallery { height:clamp(250px,36svh,390px); min-height:0; gap:10px; }
  .project-gallery-left { gap:10px; }
  .project-gallery img { border-radius:6px; }
+ .project-mobile-stage { height:clamp(270px,39svh,360px); min-height:0; gap:9px; padding:20px 10px 0; border-radius:16px; }
+ .project-phone-preview { flex-basis:108px; height:94%; padding:4px; border-width:1px; border-radius:18px 18px 0 0; box-shadow:5px 0 0 rgb(12 12 12 / 14%); }
+ .project-phone-preview.phone-1,.project-phone-preview.phone-3 { height:84%; }
+ .project-phone-preview img { border-radius:14px 14px 0 0; }
+ .project-phone-speaker { top:8px; height:3px; }
 }
 /* Short viewports and reduced motion keep all content reachable without scroll pinning. */
 @media (max-height:650px), (prefers-reduced-motion:reduce) {
@@ -234,6 +244,7 @@ main { overflow-x:clip; }
  .project-step { position:relative; top:auto; height:auto; min-height:0; margin-bottom:32px; }
  .project-card { transform:none!important; }
  .project-gallery { height:clamp(260px,45vw,500px); }
+ .project-mobile-stage { height:clamp(300px,48vw,500px); }
 }
 /* Space the starts by roughly one viewport while pinning only the visible card. */
 .project-step { height:auto; min-height:0; margin-bottom:0; }
