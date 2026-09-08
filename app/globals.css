@@ -172,7 +172,7 @@ main { overflow-x:clip; }
 
 /* Selected work: the hero's pixel typography and warm palette in a dark window UI. */
 .hero { margin-bottom:72px; }
-.projects-section { --project-cream:#f7f4ee; --pin-top:128px; position:relative; z-index:10; margin-top:-40px; border-radius:60px 60px 0 0; background:#0c0c0c; color:var(--project-cream); scroll-margin-top:24px; overflow:clip; }
+.projects-section { --project-cream:#f7f4ee; --pin-top:128px; position:relative; z-index:12; margin-top:-40px; border-radius:36px 36px 0 0; background:#0c0c0c; color:var(--project-cream); scroll-margin-top:24px; overflow:clip; }
 .projects-shell { padding-top:76px; padding-bottom:40px; }
 .projects-heading { margin-bottom:52px; }
 .projects-heading p { margin:0 0 15px; color:#f7795c; font-size:14px; letter-spacing:1.5px; }
@@ -215,7 +215,7 @@ main { overflow-x:clip; }
 }
 @media (max-width:767px) {
  .hero { margin-bottom:64px; }
- .projects-section { border-radius:36px 36px 0 0; margin-top:-32px; }
+ .projects-section { border-radius:24px 24px 0 0; margin-top:-32px; }
  .projects-shell { padding:48px 16px 24px; }
  .projects-heading { margin-bottom:32px; padding-inline:8px; }
  .projects-heading p { font-size:12px; margin-bottom:12px; }
@@ -265,7 +265,7 @@ main { overflow-x:clip; }
 }
 
 /* Experience continues out of the dark project stage like a printed work log. */
-.experience-section { position:relative; z-index:12; margin-top:-1px; border-radius:36px 36px 0 0; background:var(--background); color:var(--foreground); scroll-margin-top:24px; }
+.experience-section { position:relative; z-index:13; margin-top:-1px; border-radius:36px 36px 0 0; background:var(--background); color:var(--foreground); scroll-margin-top:24px; }
 .experience-shell { padding-top:108px; padding-bottom:132px; }
 .experience-heading { margin-bottom:58px; }
 .experience-heading h2 { margin:0; font:700 clamp(64px,7.8vw,112px)/.9 var(--pixel); letter-spacing:-.035em; }
@@ -332,7 +332,7 @@ main { overflow-x:clip; }
 }
 
 /* Contact footer: a bold coral finish with two direct ways to get in touch. */
-.site-footer { position:relative; z-index:13; margin-top:-1px; border-radius:36px 36px 0 0; background:var(--coral); color:#151515; scroll-margin-top:24px; overflow:hidden; }
+.site-footer { position:relative; z-index:14; margin-top:-1px; border-radius:36px 36px 0 0; background:var(--coral); color:#151515; scroll-margin-top:24px; overflow:hidden; }
 .footer-shell { padding-top:94px; padding-bottom:36px; }
 .footer-eyebrow { margin:0 0 24px; font-size:14px; font-weight:700; letter-spacing:1.5px; }
 .footer-title-row { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:40px; align-items:center; }
